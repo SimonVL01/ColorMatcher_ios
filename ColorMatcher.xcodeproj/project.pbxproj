@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3517861F9F69420042DCED /* PixelExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3517851F9F69420042DCED /* PixelExtractor.swift */; };
 		2F7636DB1F9E2A6C00620B66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7636DA1F9E2A6C00620B66 /* AppDelegate.swift */; };
 		2F7636DD1F9E2A6C00620B66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7636DC1F9E2A6C00620B66 /* ViewController.swift */; };
 		2F7636E01F9E2A6C00620B66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7636DE1F9E2A6C00620B66 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F3517851F9F69420042DCED /* PixelExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelExtractor.swift; sourceTree = "<group>"; };
 		2F7636D71F9E2A6B00620B66 /* ColorMatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F7636DA1F9E2A6C00620B66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F7636DC1F9E2A6C00620B66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2F7636DA1F9E2A6C00620B66 /* AppDelegate.swift */,
 				2F7636DC1F9E2A6C00620B66 /* ViewController.swift */,
 				2F7636DE1F9E2A6C00620B66 /* Main.storyboard */,
+				2F3517851F9F69420042DCED /* PixelExtractor.swift */,
 				2F7636E41F9E2A6C00620B66 /* Assets.xcassets */,
 				2F7636E61F9E2A6C00620B66 /* LaunchScreen.storyboard */,
 				2F7636E91F9E2A6C00620B66 /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F7636DD1F9E2A6C00620B66 /* ViewController.swift in Sources */,
+				2F3517861F9F69420042DCED /* PixelExtractor.swift in Sources */,
 				2F7636E31F9E2A6C00620B66 /* ColorMatcher.xcdatamodeld in Sources */,
 				2F7636DB1F9E2A6C00620B66 /* AppDelegate.swift in Sources */,
 			);

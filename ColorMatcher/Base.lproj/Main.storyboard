@@ -1,24 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="O0N-d4-4FM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="9d7-Ri-3ER">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="O0N-d4-4FM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="aHu-if-Eom">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.7917480469" blue="0.74826388889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.7917480469" blue="0.74826388889999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="483-Tv-1Ja" kind="relationship" relationship="rootViewController" id="m7c-JY-pcj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njj-2S-m1Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346" y="231"/>
+        </scene>
+        <!--Color Matcher-->
+        <scene sceneID="Yob-as-xNg">
+            <objects>
+                <viewController id="483-Tv-1Ja" customClass="ViewController" customModule="ColorMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JvB-yX-fui">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-Py-zkQ">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="NHe-Bu-vap">
+                                <rect key="frame" x="79.5" y="613" width="216" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBA-zg-z42">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="Y8M-Qb-f4q"/>
+                                        </constraints>
+                                        <state key="normal" title="Gallery"/>
+                                        <connections>
+                                            <action selector="openPhotoLibraryButton:" destination="483-Tv-1Ja" eventType="touchUpInside" id="9Jv-QL-F2D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G37-kd-HVb">
+                                        <rect key="frame" x="120" y="0.0" width="96" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="96" id="U5G-3r-pCm"/>
+                                        </constraints>
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="imagePicked:" destination="483-Tv-1Ja" eventType="touchUpInside" id="5oh-OO-16M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UiN-el-vdF">
+                                <rect key="frame" x="24" y="140" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="M2l-YA-GEd"/>
+                                    <constraint firstAttribute="height" constant="60" id="ccI-Xt-cbd"/>
+                                </constraints>
+                                <state key="normal" title="color"/>
+                                <connections>
+                                    <action selector="buttonAct:" destination="483-Tv-1Ja" eventType="touchUpInside" id="HMJ-cA-5VZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aiu-Py-zkQ" firstAttribute="trailing" secondItem="xET-RZ-skp" secondAttribute="trailing" id="Kw6-4M-IbW"/>
+                            <constraint firstItem="aiu-Py-zkQ" firstAttribute="bottom" secondItem="xET-RZ-skp" secondAttribute="bottom" id="Lac-9G-bG9"/>
+                            <constraint firstItem="aiu-Py-zkQ" firstAttribute="leading" secondItem="xET-RZ-skp" secondAttribute="leading" id="OL3-L6-HOr"/>
+                            <constraint firstItem="aiu-Py-zkQ" firstAttribute="leading" secondItem="UiN-el-vdF" secondAttribute="trailing" constant="-84" id="e7c-Tt-5k7"/>
+                            <constraint firstItem="aiu-Py-zkQ" firstAttribute="top" secondItem="xET-RZ-skp" secondAttribute="top" id="oIO-Vy-dNA"/>
+                            <constraint firstItem="UiN-el-vdF" firstAttribute="top" secondItem="xET-RZ-skp" secondAttribute="top" constant="24" id="qfs-4A-Rva"/>
+                            <constraint firstItem="NHe-Bu-vap" firstAttribute="centerX" secondItem="JvB-yX-fui" secondAttribute="centerX" id="usa-6S-1fe"/>
+                            <constraint firstItem="xET-RZ-skp" firstAttribute="bottom" secondItem="NHe-Bu-vap" secondAttribute="bottom" constant="24" id="vgJ-YO-tu3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xET-RZ-skp"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Color Matcher" id="mjE-lQ-P2o"/>
+                    <connections>
+                        <outlet property="buttonRef" destination="UiN-el-vdF" id="Gf3-mS-5p7"/>
+                        <outlet property="myImageView" destination="aiu-Py-zkQ" id="aa9-lj-8qE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmB-Ay-Aod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="373.60000000000002" y="230.73463268365819"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="profile_pic" width="650" height="433"/>
+    </resources>
 </document>
