@@ -15,11 +15,6 @@ class PixelExtractor: NSObject {
     let image: CGImage
     let context: CGContext?
     
-    var alpha:CGFloat!
-    var red:CGFloat!
-    var green:CGFloat!
-    var blue:CGFloat!
-    
     var width:Int {
         get {
             return image.width
@@ -60,20 +55,25 @@ class PixelExtractor: NSObject {
         return context!
     }
     
-    func colorAt(x: Int, y: Int) -> UIColor {
-        assert(0<=x && y<width)
-        assert(0<=y && y<height)
+    //
+    
+    func getPixelColorAtPoint(point: CGPoint, sourceView: UIView) -> UIColor {
         
-        let data = context!.data
+        let pixel = UnsafeMutablePointer<CUnsignedChar>.allocate(capacity: 4)
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let context = CGContext(data: pixel, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
         
-        let offset = 4 * (y * width + x)
-        alpha = CGFloat((data?.load(fromByteOffset: offset, as: UInt8.self))!)
-        red = CGFloat((data?.load(fromByteOffset: offset+1, as: UInt8.self))!)
-        green = CGFloat((data?.load(fromByteOffset: offset+2, as: UInt8.self))!)
-        blue = CGFloat((data?.load(fromByteOffset: offset+3, as: UInt8.self))!)
+        context!.translateBy(x: -point.x, y: -point.y)
+        sourceView.layer.render(in: context!)
+        let color: UIColor = UIColor(red: CGFloat(pixel[0])/255.0,
+                                     green: CGFloat(pixel[1])/255.0,
+                                     blue: CGFloat(pixel[2])/255.0,
+                                     alpha: CGFloat(pixel[3])/255.0)
+        print(color)
         
-        let color = UIColor(red: (red / 255), green: (green / 255), blue: (blue / 255), alpha: (alpha / 255))
-        
+        pixel.deallocate(capacity: 4)
         return color
     }
+    
 }

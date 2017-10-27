@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var pix:PixelExtractor!
     var touchX:Int!
     var touchY:Int!
+    var firstTitleColor:UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +43,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    @IBAction func openPhotoLibraryButton(_ sender: Any) {
+    
+    
+    @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             
-            let imagePicker = UIImagePickerController()
-            picker.allowsEditing = false
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            present(picker, animated: true, completion: nil)
+            let imagePickerController = UIImagePickerController()
+            imagePickerController.sourceType = .photoLibrary
+            imagePickerController.delegate = self
+            self.present(picker, animated: true, completion: nil)
             
-            /*imagePicker.delegate = self
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)*/
         } else {
             noCamera()
         }
@@ -86,22 +85,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func buttonAct(_ sender: UIButton) {
-        //buttonRef.backgroundColor = UIColor.black
-        /*let newColor = pix.colorAt(x: 250, y: 250)
-        buttonRef.backgroundColor = newColor
-        buttonRef.tintColor = UIColor.white*/
-    }
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         let location = touch.location(in: self.view)
-        print(location.x)
-        print(location.y)
-        let newColor = pix.colorAt(x: Int(location.x), y: Int(location.y))
-        buttonRef.backgroundColor = newColor
+        
+        buttonRef.backgroundColor = pix.getPixelColorAtPoint(point: location, sourceView: myImageView)
+        print(buttonRef.backgroundColor)
+        
         buttonRef.tintColor = UIColor.white
     }
     
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ColorSegue" {
+            if let destinationVC = segue.destination as? CosmeticsList {
+                //destinationVC.colorValue = buttonRef.backgroundColor
+                destinationVC.colorName = "Matches for your color"
+                destinationVC.colorValue = buttonRef.backgroundColor
+                destinationVC.firstTitleColor = self.navigationController!.navigationBar.barTintColor
+            }
+        }
+     }
 }
 
+extension ViewController {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.myImageView.image = image
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+}
