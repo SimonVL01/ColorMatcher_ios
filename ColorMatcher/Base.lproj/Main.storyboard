@@ -58,9 +58,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="U5G-3r-pCm"/>
                                         </constraints>
-                                        <state key="normal" title="Camera"/>
+                                        <state key="normal" title="Editing"/>
                                         <connections>
                                             <action selector="imagePicked:" destination="483-Tv-1Ja" eventType="touchUpInside" id="5oh-OO-16M"/>
+                                            <segue destination="wnE-KZ-eQS" kind="show" identifier="photoTransfer" id="Fgp-0h-J2G"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,7 +92,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xET-RZ-skp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Color Matcher" id="mjE-lQ-P2o"/>
+                    <navigationItem key="navigationItem" title="Color Matcher" id="mjE-lQ-P2o">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="QqI-kK-6HH">
+                            <connections>
+                                <action selector="imageMaker:" destination="483-Tv-1Ja" id="55M-Ze-bRU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonRef" destination="UiN-el-vdF" id="Gf3-mS-5p7"/>
                         <outlet property="myImageView" destination="aiu-Py-zkQ" id="aa9-lj-8qE"/>
@@ -100,6 +107,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmB-Ay-Aod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373.60000000000002" y="230.73463268365819"/>
+        </scene>
+        <!--Image Editor-->
+        <scene sceneID="rkN-t2-7Rf">
+            <objects>
+                <viewController id="wnE-KZ-eQS" customClass="ImageEditor" customModule="ColorMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1pn-e8-095">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-JF-785">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N5w-JF-785" secondAttribute="trailing" id="DS3-Tj-5or"/>
+                            <constraint firstItem="N5w-JF-785" firstAttribute="leading" secondItem="hHJ-Fs-Sy8" secondAttribute="leading" id="Icf-5D-6yx"/>
+                            <constraint firstItem="hHJ-Fs-Sy8" firstAttribute="bottom" secondItem="N5w-JF-785" secondAttribute="bottom" id="l1L-Xs-rGt"/>
+                            <constraint firstItem="N5w-JF-785" firstAttribute="top" secondItem="1pn-e8-095" secondAttribute="top" id="nfO-m9-RJN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hHJ-Fs-Sy8"/>
+                    </view>
+                    <connections>
+                        <outlet property="myEditableImage" destination="N5w-JF-785" id="bFB-fc-hCP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ck1-Cq-9O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="648"/>
         </scene>
         <!--Your Color Matches-->
         <scene sceneID="rtj-0n-msh">
@@ -129,7 +165,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQI-Lv-pAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="235"/>
+            <point key="canvasLocation" x="1159" y="-271"/>
         </scene>
     </scenes>
     <resources>

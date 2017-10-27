@@ -34,24 +34,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func imagePicked(_ sender: UIButton) {
+            print("Camera clicked")
+    }
+    
+    @IBAction func imageMaker(_ sender: UIBarButtonItem) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = .camera
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-    
     
     
     @IBAction func openPhotoLibraryButton(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
             
             let imagePickerController = UIImagePickerController()
+            imagePickerController.allowsEditing = true
             imagePickerController.sourceType = .photoLibrary
             imagePickerController.delegate = self
-            self.present(picker, animated: true, completion: nil)
+            self.present(imagePickerController, animated: true, completion: nil)
             
         } else {
             noCamera()
@@ -64,13 +68,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         alertVC.addAction(okAction)
         present(alertVC, animated: true, completion: nil)
     }
-    
-    /*func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo info: [NSObject : AnyObject]!) {
-        var chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        myImageView.contentMode = .scaleAspectFit
-        myImageView.image = chosenImage
-        dismiss(animated: true, completion: nil)
-    }*/
     
     func imagePickerController(_picker:UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -90,7 +87,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let location = touch.location(in: self.view)
         
         buttonRef.backgroundColor = pix.getPixelColorAtPoint(point: location, sourceView: myImageView)
-        print(buttonRef.backgroundColor)
+        print(buttonRef.backgroundColor as Any)
         
         buttonRef.tintColor = UIColor.white
     }
@@ -105,6 +102,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 destinationVC.colorName = "Matches for your color"
                 destinationVC.colorValue = buttonRef.backgroundColor
                 destinationVC.firstTitleColor = self.navigationController!.navigationBar.barTintColor
+            }
+        }
+        
+        if segue.identifier == "photoTransfer" {
+            if let destinationVC = segue.destination as? ImageEditor {
+                destinationVC.editedImage = myImageView.image
             }
         }
      }

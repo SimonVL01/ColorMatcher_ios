@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1294C51FA3601700EF072B /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1294C41FA3601600EF072B /* PhotosUI.framework */; };
+		2F1294C71FA3601700EF072B /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1294C61FA3601700EF072B /* Photos.framework */; };
+		2F1294CA1FA3601700EF072B /* PhotoEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1294C91FA3601700EF072B /* PhotoEditingViewController.swift */; };
+		2F1294CD1FA3601700EF072B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F1294CB1FA3601700EF072B /* MainInterface.storyboard */; };
+		2F1294D11FA3601700EF072B /* ColorMatcher_editing.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2F1294C21FA3601600EF072B /* ColorMatcher_editing.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2F1294D61FA3613300EF072B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7636DE1F9E2A6C00620B66 /* Main.storyboard */; };
+		2F1294D91FA36ABD00EF072B /* ImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1294D71FA36ABD00EF072B /* ImageEditor.swift */; };
+		2F1294DA1FA36ABD00EF072B /* ImageEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1294D71FA36ABD00EF072B /* ImageEditor.swift */; };
+		2F1294DB1FA36ABD00EF072B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1294D81FA36ABD00EF072B /* ImageEditor.xib */; };
+		2F1294DC1FA36ABD00EF072B /* ImageEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F1294D81FA36ABD00EF072B /* ImageEditor.xib */; };
 		2F3517861F9F69420042DCED /* PixelExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3517851F9F69420042DCED /* PixelExtractor.swift */; };
 		2F4AA8C41FA31DD400FEAE66 /* CosmeticsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AA8C21FA31DD400FEAE66 /* CosmeticsList.swift */; };
 		2F4AA8C51FA31DD400FEAE66 /* CosmeticsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4AA8C31FA31DD400FEAE66 /* CosmeticsList.xib */; };
@@ -21,6 +31,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2F1294CF1FA3601700EF072B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F7636CF1F9E2A6B00620B66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F1294C11FA3601600EF072B;
+			remoteInfo = ColorMatcher_editing;
+		};
 		2F7636EF1F9E2A6C00620B66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2F7636CF1F9E2A6B00620B66 /* Project object */;
@@ -37,7 +54,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2F1294D51FA3601700EF072B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2F1294D11FA3601700EF072B /* ColorMatcher_editing.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2F1294C21FA3601600EF072B /* ColorMatcher_editing.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ColorMatcher_editing.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F1294C41FA3601600EF072B /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		2F1294C61FA3601700EF072B /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		2F1294C91FA3601700EF072B /* PhotoEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditingViewController.swift; sourceTree = "<group>"; };
+		2F1294CC1FA3601700EF072B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2F1294CE1FA3601700EF072B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F1294D71FA36ABD00EF072B /* ImageEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditor.swift; sourceTree = "<group>"; };
+		2F1294D81FA36ABD00EF072B /* ImageEditor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageEditor.xib; sourceTree = "<group>"; };
 		2F3517851F9F69420042DCED /* PixelExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelExtractor.swift; sourceTree = "<group>"; };
 		2F4AA8C21FA31DD400FEAE66 /* CosmeticsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmeticsList.swift; sourceTree = "<group>"; };
 		2F4AA8C31FA31DD400FEAE66 /* CosmeticsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CosmeticsList.xib; sourceTree = "<group>"; };
@@ -58,6 +97,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2F1294BF1FA3601600EF072B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F1294C51FA3601700EF072B /* PhotosUI.framework in Frameworks */,
+				2F1294C71FA3601700EF072B /* Photos.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F7636D41F9E2A6B00620B66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -82,12 +130,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1294C31FA3601600EF072B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F1294C41FA3601600EF072B /* PhotosUI.framework */,
+				2F1294C61FA3601700EF072B /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F1294C81FA3601700EF072B /* ColorMatcher_editing */ = {
+			isa = PBXGroup;
+			children = (
+				2F1294C91FA3601700EF072B /* PhotoEditingViewController.swift */,
+				2F1294CB1FA3601700EF072B /* MainInterface.storyboard */,
+				2F1294CE1FA3601700EF072B /* Info.plist */,
+			);
+			path = ColorMatcher_editing;
+			sourceTree = "<group>";
+		};
 		2F7636CE1F9E2A6B00620B66 = {
 			isa = PBXGroup;
 			children = (
 				2F7636D91F9E2A6B00620B66 /* ColorMatcher */,
 				2F7636F11F9E2A6C00620B66 /* ColorMatcherTests */,
 				2F7636FC1F9E2A6C00620B66 /* ColorMatcherUITests */,
+				2F1294C81FA3601700EF072B /* ColorMatcher_editing */,
+				2F1294C31FA3601600EF072B /* Frameworks */,
 				2F7636D81F9E2A6B00620B66 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +167,7 @@
 				2F7636D71F9E2A6B00620B66 /* ColorMatcher.app */,
 				2F7636EE1F9E2A6C00620B66 /* ColorMatcherTests.xctest */,
 				2F7636F91F9E2A6C00620B66 /* ColorMatcherUITests.xctest */,
+				2F1294C21FA3601600EF072B /* ColorMatcher_editing.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,6 +180,8 @@
 				2F4AA8C21FA31DD400FEAE66 /* CosmeticsList.swift */,
 				2F4AA8C31FA31DD400FEAE66 /* CosmeticsList.xib */,
 				2F7636DE1F9E2A6C00620B66 /* Main.storyboard */,
+				2F1294D71FA36ABD00EF072B /* ImageEditor.swift */,
+				2F1294D81FA36ABD00EF072B /* ImageEditor.xib */,
 				2F3517851F9F69420042DCED /* PixelExtractor.swift */,
 				2F7636E41F9E2A6C00620B66 /* Assets.xcassets */,
 				2F7636E61F9E2A6C00620B66 /* LaunchScreen.storyboard */,
@@ -140,6 +212,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2F1294C11FA3601600EF072B /* ColorMatcher_editing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F1294D41FA3601700EF072B /* Build configuration list for PBXNativeTarget "ColorMatcher_editing" */;
+			buildPhases = (
+				2F1294BE1FA3601600EF072B /* Sources */,
+				2F1294BF1FA3601600EF072B /* Frameworks */,
+				2F1294C01FA3601600EF072B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ColorMatcher_editing;
+			productName = ColorMatcher_editing;
+			productReference = 2F1294C21FA3601600EF072B /* ColorMatcher_editing.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		2F7636D61F9E2A6B00620B66 /* ColorMatcher */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2F7637021F9E2A6C00620B66 /* Build configuration list for PBXNativeTarget "ColorMatcher" */;
@@ -147,10 +236,12 @@
 				2F7636D31F9E2A6B00620B66 /* Sources */,
 				2F7636D41F9E2A6B00620B66 /* Frameworks */,
 				2F7636D51F9E2A6B00620B66 /* Resources */,
+				2F1294D51FA3601700EF072B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2F1294D01FA3601700EF072B /* PBXTargetDependency */,
 			);
 			name = ColorMatcher;
 			productName = ColorMatcher;
@@ -203,6 +294,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "vdab cursist";
 				TargetAttributes = {
+					2F1294C11FA3601600EF072B = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
 					2F7636D61F9E2A6B00620B66 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -235,16 +330,28 @@
 				2F7636D61F9E2A6B00620B66 /* ColorMatcher */,
 				2F7636ED1F9E2A6C00620B66 /* ColorMatcherTests */,
 				2F7636F81F9E2A6C00620B66 /* ColorMatcherUITests */,
+				2F1294C11FA3601600EF072B /* ColorMatcher_editing */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2F1294C01FA3601600EF072B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F1294DC1FA36ABD00EF072B /* ImageEditor.xib in Resources */,
+				2F1294CD1FA3601700EF072B /* MainInterface.storyboard in Resources */,
+				2F1294D61FA3613300EF072B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F7636D51F9E2A6B00620B66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				2F4AA8C51FA31DD400FEAE66 /* CosmeticsList.xib in Resources */,
+				2F1294DB1FA36ABD00EF072B /* ImageEditor.xib in Resources */,
 				2F7636E81F9E2A6C00620B66 /* LaunchScreen.storyboard in Resources */,
 				2F7636E51F9E2A6C00620B66 /* Assets.xcassets in Resources */,
 				2F7636E01F9E2A6C00620B66 /* Main.storyboard in Resources */,
@@ -268,10 +375,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2F1294BE1FA3601600EF072B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F1294DA1FA36ABD00EF072B /* ImageEditor.swift in Sources */,
+				2F1294CA1FA3601700EF072B /* PhotoEditingViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2F7636D31F9E2A6B00620B66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F1294D91FA36ABD00EF072B /* ImageEditor.swift in Sources */,
 				2F7636DD1F9E2A6C00620B66 /* ViewController.swift in Sources */,
 				2F3517861F9F69420042DCED /* PixelExtractor.swift in Sources */,
 				2F7636E31F9E2A6C00620B66 /* ColorMatcher.xcdatamodeld in Sources */,
@@ -299,6 +416,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F1294D01FA3601700EF072B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F1294C11FA3601600EF072B /* ColorMatcher_editing */;
+			targetProxy = 2F1294CF1FA3601700EF072B /* PBXContainerItemProxy */;
+		};
 		2F7636F01F9E2A6C00620B66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2F7636D61F9E2A6B00620B66 /* ColorMatcher */;
@@ -312,6 +434,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2F1294CB1FA3601700EF072B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F1294CC1FA3601700EF072B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		2F7636DE1F9E2A6C00620B66 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -331,6 +461,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2F1294D21FA3601700EF072B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColorMatcher_editing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vdabcursist.ColorMatcher.ColorMatcher-editing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2F1294D31FA3601700EF072B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ColorMatcher_editing/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vdabcursist.ColorMatcher.ColorMatcher-editing";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2F7637001F9E2A6C00620B66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -441,6 +599,7 @@
 		2F7637031F9E2A6C00620B66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ColorMatcher/Info.plist;
@@ -455,6 +614,7 @@
 		2F7637041F9E2A6C00620B66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ColorMatcher/Info.plist;
@@ -531,6 +691,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2F1294D41FA3601700EF072B /* Build configuration list for PBXNativeTarget "ColorMatcher_editing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F1294D21FA3601700EF072B /* Debug */,
+				2F1294D31FA3601700EF072B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2F7636D21F9E2A6B00620B66 /* Build configuration list for PBXProject "ColorMatcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
