@@ -106,11 +106,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         if segue.identifier == "photoTransfer" {
-            if let destinationVC = segue.destination as? ImageEditor {
-                destinationVC.editedImage = myImageView.image
+            if let destinationVC = segue.destination as? UINavigationController {
+                if let targetController = destinationVC.topViewController as? ImageEditor {
+                targetController.originalImage.image = myImageView.image
+                    
+                }
             }
+            let backItem = UIBarButtonItem()
+            backItem.title = "Cancel"
+            navigationItem.backBarButtonItem = backItem
         }
      }
+    
 }
 
 extension ViewController {

@@ -61,7 +61,7 @@
                                         <state key="normal" title="Editing"/>
                                         <connections>
                                             <action selector="imagePicked:" destination="483-Tv-1Ja" eventType="touchUpInside" id="5oh-OO-16M"/>
-                                            <segue destination="wnE-KZ-eQS" kind="show" identifier="photoTransfer" id="Fgp-0h-J2G"/>
+                                            <segue destination="kDD-oh-DxY" kind="show" identifier="photoTransfer" id="NVC-WC-WSm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,34 +108,77 @@
             </objects>
             <point key="canvasLocation" x="373.60000000000002" y="230.73463268365819"/>
         </scene>
-        <!--Image Editor-->
+        <!--Photo Editor-->
         <scene sceneID="rkN-t2-7Rf">
             <objects>
-                <viewController id="wnE-KZ-eQS" customClass="ImageEditor" customModule="ColorMatcher" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photo Editor" id="wnE-KZ-eQS" customClass="ImageEditor" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1pn-e8-095">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8C-ED-lx6">
+                                <rect key="frame" x="87" y="278" width="200" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-JF-785">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="571"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZUI-KU-leB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="507"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-I0-vz1">
+                                <rect key="frame" x="139.5" y="517" width="96" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvf-34-9ZQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="3h1-Yf-oM1"/>
+                                            <constraint firstAttribute="width" constant="96" id="qjd-LZ-emc"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Filter"/>
+                                        <connections>
+                                            <action selector="filterButtonTapped:" destination="wnE-KZ-eQS" eventType="touchUpInside" id="rOJ-SK-73T"/>
+                                            <action selector="savePicButton:" destination="wnE-KZ-eQS" eventType="touchUpInside" id="Rbf-Ew-Jsm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsT-8Z-fBx">
+                                <rect key="frame" x="0.0" y="569" width="375" height="98"/>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZUI-KU-leB" firstAttribute="trailing" secondItem="hHJ-Fs-Sy8" secondAttribute="trailing" id="06u-NM-XgB"/>
+                            <constraint firstItem="bsT-8Z-fBx" firstAttribute="bottom" secondItem="hHJ-Fs-Sy8" secondAttribute="bottom" id="0B7-Ii-wnM"/>
+                            <constraint firstItem="lkW-I0-vz1" firstAttribute="centerX" secondItem="1pn-e8-095" secondAttribute="centerX" id="1V8-MG-6Kf"/>
                             <constraint firstAttribute="trailing" secondItem="N5w-JF-785" secondAttribute="trailing" id="DS3-Tj-5or"/>
                             <constraint firstItem="N5w-JF-785" firstAttribute="leading" secondItem="hHJ-Fs-Sy8" secondAttribute="leading" id="Icf-5D-6yx"/>
-                            <constraint firstItem="hHJ-Fs-Sy8" firstAttribute="bottom" secondItem="N5w-JF-785" secondAttribute="bottom" id="l1L-Xs-rGt"/>
+                            <constraint firstItem="lkW-I0-vz1" firstAttribute="top" secondItem="ZUI-KU-leB" secondAttribute="bottom" constant="-54" id="NwD-CU-1ux"/>
+                            <constraint firstItem="bsT-8Z-fBx" firstAttribute="trailing" secondItem="hHJ-Fs-Sy8" secondAttribute="trailing" id="ahJ-eT-z1k"/>
+                            <constraint firstItem="bsT-8Z-fBx" firstAttribute="top" secondItem="N5w-JF-785" secondAttribute="bottom" constant="-2" id="bDc-CC-RO8"/>
+                            <constraint firstItem="bsT-8Z-fBx" firstAttribute="leading" secondItem="hHJ-Fs-Sy8" secondAttribute="leading" id="dAc-Nb-r6C"/>
+                            <constraint firstItem="ZUI-KU-leB" firstAttribute="top" secondItem="hHJ-Fs-Sy8" secondAttribute="top" id="dtc-Ux-DQz"/>
+                            <constraint firstItem="hHJ-Fs-Sy8" firstAttribute="bottom" secondItem="N5w-JF-785" secondAttribute="bottom" constant="96" id="l1L-Xs-rGt"/>
+                            <constraint firstItem="hHJ-Fs-Sy8" firstAttribute="bottom" secondItem="lkW-I0-vz1" secondAttribute="bottom" constant="120" id="nbw-M2-Ycg"/>
                             <constraint firstItem="N5w-JF-785" firstAttribute="top" secondItem="1pn-e8-095" secondAttribute="top" id="nfO-m9-RJN"/>
+                            <constraint firstItem="ZUI-KU-leB" firstAttribute="leading" secondItem="hHJ-Fs-Sy8" secondAttribute="leading" id="x4h-jG-vbt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hHJ-Fs-Sy8"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Photo Editor" id="d2F-IN-fvT">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="J57-7h-P39"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="myEditableImage" destination="N5w-JF-785" id="bFB-fc-hCP"/>
+                        <outlet property="editedImage" destination="ZUI-KU-leB" id="0rP-wq-8Lv"/>
+                        <outlet property="originalImage" destination="N5w-JF-785" id="IkA-Qf-8Wr"/>
+                        <outlet property="scrollView" destination="bsT-8Z-fBx" id="c9Q-iA-8he"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ck1-Cq-9O4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="648"/>
+            <point key="canvasLocation" x="1849" y="647"/>
         </scene>
         <!--Your Color Matches-->
         <scene sceneID="rtj-0n-msh">
@@ -166,6 +209,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JQI-Lv-pAh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1159" y="-271"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9jj-iz-IkV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kDD-oh-DxY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HbE-sz-qwK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wnE-KZ-eQS" kind="relationship" relationship="rootViewController" id="4cc-Vh-AoR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lWa-8j-3Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="646"/>
         </scene>
     </scenes>
     <resources>
